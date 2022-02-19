@@ -32,6 +32,7 @@ const _writeHash = async (contributionName) => {
   const filename = `${folder}/contribution.ptau`
   const hash = await _calculateHash(filename)
   fs.writeFileSync(`${folder}/hash`, hash)
+  return hash
 }
 
 const writeHash = async () => {
