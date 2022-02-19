@@ -20,3 +20,7 @@ git add .
 git commit -m "Myname - contribution"
 git push origin myname-contribution
 ```
+
+## Hash Verification
+
+When you submit a contribution, the program will print out the hash of your contribution when finished. There is [a list of the hashes being maintained on Google Sheets](https://docs.google.com/spreadsheets/d/1wjdT_eYXYNlRO5abM5GE7tIuYL8t2EAETQizGpIqemA/edit?usp=sharing).
