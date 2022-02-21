@@ -2,9 +2,14 @@
 
 ## How to Contribute
 
+1. Create a fork of this repository on GitHub 
+2. Run the code below
+3. [Create a new pull request](https://docs.github.com/en/enterprise-server@3.4/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) from your fork to this repository
+
+
 ```
 # Clone the repo and change working directory
-git clone git@github.com:avvydomains/powers-of-tau.git
+git clone git@github.com:YOUR-USERNAME/powers-of-tau.git
 cd powers-of-tau
 
 # Check out a new branch
