@@ -3,8 +3,9 @@
 ## How to Contribute
 
 ```
-# Clone the repo
+# Clone the repo and change working directory
 git clone git@github.com:avvydomains/powers-of-tau.git
+cd powers-of-tau
 
 # Check out a new branch
 git checkout -b myname-contribution
@@ -16,7 +17,7 @@ npm install
 node cli.js contribute
 
 # Commit & push
-git add .
+git add contributions/*
 git commit -m "Myname - contribution"
 git push origin myname-contribution
 ```
