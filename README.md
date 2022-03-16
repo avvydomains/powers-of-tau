@@ -29,4 +29,6 @@ git push origin myname-contribution
 
 ## Hash Verification
 
-When you submit a contribution, the program will print out the hash of your contribution when finished. There is [a list of the hashes being maintained on Google Sheets](https://docs.google.com/spreadsheets/d/1wjdT_eYXYNlRO5abM5GE7tIuYL8t2EAETQizGpIqemA/edit?usp=sharing).
+When you submit a contribution, the program will print out the hash of your contribution when finished. Please share the hash in the #powers-of-tau channel in Discord when you have completed. The idea is that since we are using Github to maintain the ceremony, it's possible (though extremely unlikely) that Github compromises the entire ceremony. 
+
+[A full list of the hashes being maintained on Google Sheets](https://docs.google.com/spreadsheets/d/1wjdT_eYXYNlRO5abM5GE7tIuYL8t2EAETQizGpIqemA/edit?usp=sharing).
