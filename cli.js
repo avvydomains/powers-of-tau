@@ -96,12 +96,35 @@ const contribute = async () => {
   console.log('*****************************************************************************************')
 }
 
+const beacon = async () => {
+  let msg = 'initial'
+  let startTime = parseInt(Date.now() / 1000)
+  const iterations = Math.pow(2, 36)
+  const update = 1000000
+  for (let i = 0; i < iterations; i += 1) {
+    msg = crypto.createHash('sha256').update(msg).digest('hex')
+    if (i % update === 0) {
+      let pct = (i / iterations) * 100
+      let now = parseInt(Date.now() / 1000)
+      let timePerIteration = (now - startTime) / i
+      let remainingIterations = iterations - i
+      let timeEstimate = remainingIterations * timePerIteration
+      console.log(`${i}/${iterations} (${pct}%)`)
+      console.log(`${now - startTime} seconds elapsed`)
+      console.log(`${timePerIteration} seconds per iteration`)
+      console.log(`${timeEstimate} seconds remaining`)
+    }
+  }
+  fs.writeFileSync('finalize/beacon.txt', msg, 'utf8')
+}
+
 const main = async () => {
   const cmd = process.argv[2]
   await {
     'write-hash': writeHash,
     'verify': verify,
     'contribute': contribute,
+    'beacon': beacon,
   }[cmd]()
 }
 
