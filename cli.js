@@ -97,22 +97,20 @@ const contribute = async () => {
 }
 
 const beacon = async () => {
-  let msg = 'initial'
+  let msg = '0x6164631ffbb4ef773d47dde35b03d3376a28c657479cd8ff4e8431016ba3dc53_0x4f1d29b5890a0cfe02c32b2d8a0ae70a41aa418cc8c9b1ca65c08d20dafe6561_0x3f0f2ffdb8ba0bf6ccf3e8328f7b08ee67cdab949ba5195d3d732d8809356f19_0xeb696be528ad1f588df019d4d9991563a303362b08b4be59007fe2c45c1a8e0d_0xfd7c901d58034afb68a8edc85ac3702833e9a4e110f992ebc65979631e6a01ef_0x27ae8707234eacd58e2bab403b34387792fbb1f602beb5023790b15b8c57c3da_0xec4fb0c46aab0797ae632c4124c406f74375ce0058f2fca7306e3225d6f795c6_0xcc8cefae7ed1c11234b01e7dc58aae47045438f5860a86916442cc411068ab38_0x149ab8818ac146a3442807999ee61235590be67025afc1ca1f4151f731d96a64_0x52eee16e81552d3f2bc3edd8b9e94d71edcc46a2b2271e256c5b843e20cc02b7_0x2227270213633b65f8353f78a004c52405f44a91d77b67aec85dd8d0e6a14de3'
   let startTime = parseInt(Date.now() / 1000)
   const iterations = Math.pow(2, 36)
   const update = 1000000
   for (let i = 0; i < iterations; i += 1) {
     msg = crypto.createHash('sha256').update(msg).digest('hex')
-    if (i % update === 0) {
+    if (i % update === 0 && i > 0) {
       let pct = (i / iterations) * 100
       let now = parseInt(Date.now() / 1000)
       let timePerIteration = (now - startTime) / i
       let remainingIterations = iterations - i
       let timeEstimate = remainingIterations * timePerIteration
       console.log(`${i}/${iterations} (${pct}%)`)
-      console.log(`${now - startTime} seconds elapsed`)
-      console.log(`${timePerIteration} seconds per iteration`)
-      console.log(`${timeEstimate} seconds remaining`)
+      console.log(`${parseInt(timeEstimate / 60)} minutes remaining`)
     }
   }
   fs.writeFileSync('finalize/beacon.txt', msg, 'utf8')
