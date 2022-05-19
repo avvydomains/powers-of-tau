@@ -1,5 +1,13 @@
 # Powers of Tau Ceremony
 
+## Using `final.ptau`
+
+To generate `final.ptau`:
+
+1. Clone this repository
+2. Run `bash finalize.sh`
+3. Find `final.ptau` at `finalize/final.ptau`.
+
 ## How to Contribute
 
 1. Create a fork of this repository on GitHub 
